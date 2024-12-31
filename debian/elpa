@@ -1,0 +1,2 @@
+*.el
+debian/mutt-alias-pkg.el

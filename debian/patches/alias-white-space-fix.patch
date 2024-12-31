@@ -1,0 +1,16 @@
+Description: the white-space after "alias" may include tabs.
+Forwarded: https://github.com/davep/mutt-alias.el/pull/4
+Author: Jeremy Sowden <jeremy@azazel.net>
+Last-Update: 2022-12-17
+
+--- a/mutt-alias.el
++++ b/mutt-alias.el
+@@ -72,7 +72,7 @@
+       (loop for file in mutt-alias-file-list do (insert-file-contents file))
+       (setf (point) (point-min))
+       (setq mutt-alias-aliases
+-            (loop while (search-forward-regexp "^[ \t]*alias +" nil t)
++            (loop while (search-forward-regexp "^[ \t]*alias[ \t]+" nil t)
+                   collect (mutt-alias-grab-alias)))))
+   mutt-alias-aliases)
+ 
