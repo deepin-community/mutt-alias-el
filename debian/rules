@@ -1,4 +1,9 @@
 #!/usr/bin/make -f
 
 %:
-	dh $@
+	dh $@ --with elpa
+
+ifeq ($(filter nodoc,$(DEB_BUILD_PROFILES)),)
+execute_before_dh_installinfo:
+	makeinfo --no-split mutt-alias.texi -o debian/tmp/mutt-alias.info
+endif

@@ -1,5 +1,73 @@
-template-repository (1.0-1) unstable; urgency=medium
+mutt-alias-el (1.5-6) unstable; urgency=medium
 
-  * Initial release
+  * Team upload.
+  * Rebuild against dh-elpa 2.1.5.
+    Upload pushed to dgit-repos but not salsa.
+    See <https://lists.debian.org/debian-emacsen/2024/07/msg00077.html>.
 
- -- Tsic404 <liuheng@deepin.org>  Sat, 28 Jan 2023 13:46:49 +0800
+ -- Sean Whitton <spwhitton@spwhitton.name>  Thu, 25 Jul 2024 22:54:59 +0900
+
+mutt-alias-el (1.5-5) unstable; urgency=medium
+
+  [ Nicholas D Steeves ]
+  * Update my email address.
+  * Drop myself from Uploaders.
+
+  [ Jeremy Sowden ]
+  * d/control
+    - add myself to uploaders. (Closes: #1005853)
+    - bump Standards-Version to 4.6.2
+    - update my e-mail address
+  * d/copyright:
+    - add myself to debian/*
+  * d/elpa
+    - remove info/mutt-alias file
+  * d/gbp.conf
+    - dch: set `commit-msg`
+  * d/.gitignore
+    - ignore debian/ build artefacts
+  * d/patches
+    - add patch to allow tabs after "alias"
+  * d/rules
+    - make info file before `dh_installinfo`
+
+ -- Jeremy Sowden <azazel@debian.org>  Thu, 29 Feb 2024 11:11:00 +0000
+
+mutt-alias-el (1.5-4) unstable; urgency=medium
+
+  * Rebuild with dh-elpa 2.0.
+  * Migrate to debhelper-compat 13.
+  * Add Rules-Requires-Root: no.
+  * Drop Enhances emacs25, because the package does not exist in bullseye.
+  * Update my copyright years.
+  * Declare Standards-Version: 4.5.1 (no changes required).
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Tue, 08 Dec 2020 06:51:36 -0500
+
+mutt-alias-el (1.5-3) unstable; urgency=medium
+
+  * Team upload.
+  * Rebuild with current dh-elpa
+
+ -- David Bremner <bremner@debian.org>  Mon, 26 Aug 2019 12:00:26 -0300
+
+mutt-alias-el (1.5-2) unstable; urgency=medium
+
+  * Support the "nodoc" build profile. (Closes: #909513)
+    - debian/control: do not install texinfo when building with nodoc.
+    - debian/rules: override dh_elpa instead of dh_auto_build, and add
+      logic to skip documentation generation when "nodoc" is active.
+    - debian/info: Install info page using this method.
+  * debian/control:
+    - Enhance short and long descriptions.
+    - Use a more compact and correct list format.
+  * debian/rules: Drop DH_VERBOSE.
+  * Declare Standards-Version: 4.2.1. (No additional changes required)
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Wed, 28 Nov 2018 18:42:01 -0500
+
+mutt-alias-el (1.5-1) unstable; urgency=medium
+
+  * Initial release. (Closes: #905086)
+
+ -- Nicholas D Steeves <nsteeves@gmail.com>  Tue, 21 Aug 2018 15:24:00 -0400
